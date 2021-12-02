@@ -1,7 +1,7 @@
 // responsibility: coordinates the flow of data and objects/methods
 class App {
     constructor(dao, calculator) {
-        $('#calculate-button').click(this.init);
+        $('#calculate-button').click(this.init.bind(this));
         this._dao = dao;
         this._calculator = calculator;
     }
