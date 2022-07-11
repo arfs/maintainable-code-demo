@@ -56,11 +56,13 @@ class UiItemsDAO {
 */
 class LocalStorageDAO {
     getItemPrices() {
-        return localStorage.getItem('itemPrices').split(',');
+        const itemPrices =  localStorage.getItem('itemPrices');
+        return (itemPrices === null) ? [] : itemPrices.split(',');
     }
 
     getStateTax() {
-        return localStorage.getItem('stateTax');
+        const stateTax = localStorage.getItem('stateTax') || 0.0825;
+        return stateTax;
     }
 }
 
